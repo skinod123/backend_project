@@ -1,1 +1,1 @@
-web: gunicorn worker:python manage.py runserver
+web gunicorn bye.wsgi:application --log-file -
