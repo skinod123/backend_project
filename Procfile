@@ -1,1 +1,1 @@
-web: gunicorn manage.py python worker:python manage.py runserver
+web: gunicorn worker:python manage.py runserver
