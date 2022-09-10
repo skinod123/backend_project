@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from .models import Contact, Region, Location, Travel_type, Route, Food, Living
 from .seriaizers import RegionSerilizer, LocationSerilizer, ContactSerilizer, Travel_typeSerilizer, RouteSerilizer, FoodSerilizer, LivingSerilizer
 from accounts.models import User, userProfile
-
+from .permissions import IsOwnerProfileOrReadOnly
 class RegionViewSet(viewsets.ModelViewSet):
     """
     A simple ViewSet for viewing and editing accounts.
@@ -17,6 +17,7 @@ class LocationViewSet(viewsets.ModelViewSet):
     """
     queryset = Location.objects.all()
     serializer_class = LocationSerilizer
+
     
     def perform_create(self, serializer):
         user = User.objects.get(username=self.request.user)
@@ -30,10 +31,12 @@ class ContactViewSet(viewsets.ModelViewSet):
     queryset = Contact.objects.all()
     serializer_class = ContactSerilizer
 
+
     def perform_create(self, serializer):
         user = User.objects.get(username=self.request.user)
         userp = userProfile.objects.get(user=user)
         serializer.save(user=userp)
+        
 
 
 class FoodViewSet(viewsets.ModelViewSet):
@@ -56,6 +59,7 @@ class RouteViewSet(viewsets.ModelViewSet):
     serializer_class = RouteSerilizer
 
 
+
     # def perform_create(self, serializer):
     #     serializer.save(user=self.request.user)
 
@@ -66,6 +70,7 @@ class Travel_typeViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = Travel_type.objects.all()
     serializer_class = Travel_typeSerilizer
+
 
     # def perform_create(self, serializer):
     #     serializer.save(user=self.request.user)
@@ -78,7 +83,7 @@ class LivingViewSet(viewsets.ModelViewSet):
     """
     queryset = Living.objects.all()
     serializer_class = LivingSerilizer
-
+    permission_classes = [IsOwnerProfileOrReadOnly]
 
     # def perform_create(self, serializer):
     #     serializer.save(user=self.request.user)

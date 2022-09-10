@@ -2,7 +2,7 @@
 from .views import RegionViewSet, LocationViewSet, FoodViewSet, Travel_typeViewSet, RouteViewSet, LivingViewSet, ContactViewSet
 from rest_framework.routers import DefaultRouter
 
-
+    
 router = DefaultRouter()
 router.register(r'region/', RegionViewSet, basename='region')
 router.register(r'location/', LocationViewSet, basename='location')
