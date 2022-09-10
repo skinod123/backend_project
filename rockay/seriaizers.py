@@ -17,7 +17,7 @@ class LocationSerilizer(serializers.ModelSerializer):
 class ContactSerilizer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = '__all__'
+        fields = ['name', 'email', 'mobile', 'whatsapp', 'telegram', 'created', 'update']
         
 
 class Travel_typeSerilizer(serializers.ModelSerializer):

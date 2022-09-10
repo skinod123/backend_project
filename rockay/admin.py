@@ -12,7 +12,7 @@ class LocationAdmin(admin.ModelAdmin):
     search_fields = ['name', 'picture', 'regions']
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'mobile', 'telegram', 'whatsapp', 'home']
+    list_display = ['name', 'email', 'mobile', 'telegram', 'whatsapp', 'home', 'user', 'created', 'update']
     search_fields = ['name', 'home', 'email']
 
 class FoodAdmin(admin.ModelAdmin):
