@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'djoser',
     'rest_framework',
     'rest_framework_simplejwt',
-    'rest_framework_swagger',
     "rockay.apps.RockayConfig",
     "accounts.apps.AccountsConfig",
 ]
