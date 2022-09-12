@@ -16,9 +16,9 @@ class ContactAdmin(admin.ModelAdmin):
     search_fields = ['name', 'home', 'email']
 
 class FoodAdmin(admin.ModelAdmin):
-    list_display = ['kitchen', 'opisanie', 'price_one_day', 'regions']
+    list_display = ['kitchen', 'opisanie', 'cena_za_day', 'regions']
     list_filter = ['regions']
-    search_fields = ['price_one_day']
+    search_fields = ['cena_za_day']
     
 
 class Travel_typeAdmin(admin.ModelAdmin):

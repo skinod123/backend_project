@@ -35,7 +35,7 @@ class RouteSerilizer(serializers.ModelSerializer):
 class FoodSerilizer(serializers.ModelSerializer):
     class Meta:
         model = Food
-        fields = ['kitchen', 'opisanie' 'price_one_day', 'regions']
+        fields = ['kitchen', 'opisanie' 'cena_za_day', 'regions']
 
         
 

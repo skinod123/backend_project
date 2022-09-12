@@ -63,7 +63,7 @@ class Route(models.Model):
 class Food(models.Model):
     kitchen = models.CharField(max_length=500)
     opisanie = models.CharField(max_length=1000)
-    price_one_day = models.IntegerField()
+    cena_za_day = models.IntegerField()
     is_active = models.BooleanField(default=False)
     regions = models.ForeignKey(Location, verbose_name='region', on_delete=models.CASCADE)
     user = models.ForeignKey(userProfile, on_delete=models.CASCADE)
